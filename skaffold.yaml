@@ -1,0 +1,14 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: gajzlerowicz
+
+build:
+  artifacts:
+    - image: eu.gcr.io/petpit/gajzlerowicz
+      context: .
+
+deploy:
+  kubectl:
+    manifests:
+    - k8s/*

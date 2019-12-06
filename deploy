@@ -1,0 +1,13 @@
+#!/bin/bash
+
+yarn version --patch
+VERSION=$(node -p "require('./package.json').version")
+
+docker build -t "adamgajzlerowicz/gajzlerowicz:$VERSION" .
+docker push "adamgajzlerowicz/gajzlerowicz:$VERSION"
+
+kubectl set image deployment/gajzlerowicz "gajzlerowicz=adamgajzlerowicz/gajzlerowicz:$VERSION"
+
+git add package.json
+git commit -m "version bump"
+git push

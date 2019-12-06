@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gajzlerowicz
+  labels:
+    app: gajzlerowicz
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: gajzlerowicz
+  template:
+    metadata:
+      labels:
+        app: gajzlerowicz
+    spec:
+      containers:
+        - name: gajzlerowicz
+          imagePullPolicy: IfNotPresent
+          image: eu.gcr.io/petpit/gajzlerowicz
+          ports:
+            - containerPort: 3000

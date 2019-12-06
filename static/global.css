@@ -1,0 +1,9 @@
+* {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+button {
+	background: transparent;
+	outline: none;
+	border: none;
+}

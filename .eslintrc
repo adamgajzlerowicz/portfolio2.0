@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "plugins": [
+    "svelte3"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
+  "rules": {
+    "curly": ["warn", "all"],
+    "no-multi-spaces": ["warn", { "ignoreEOLComments": false }],
+    "linebreak-style": ["error", "unix"],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "global-require": "off",
+    "no-unreachable": ["warn"],
+    "eol-last": ["warn", "always"],
+    "arrow-body-style": ["error", "as-needed"],
+    "indent": ["error", 2],
+    "no-debugger": "warn",
+    "no-multiple-empty-lines": ["warn", { "max": 2, "maxBOF": 0, "maxEOF": 1 }],
+    "quotes": ["warn", "single", { "avoidEscape": true }],
+    "no-console": 0,
+    "no-undef": 2,
+    "prefer-const": 2
+  },
+
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          [ "components", "./src/components" ]
+        ]
+      }
+    }
+  }
+}
